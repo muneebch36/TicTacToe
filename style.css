@@ -6,3 +6,21 @@
   color: white;
   font-family: "Open Sans", Helvetica, sans-serif;
 }
+
+.gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 400px;
+  height: 400px;
+  border: 2px solid blue;
+  margin: 0px auto;
+}
+
+.square {
+  border: 2px solid blue;
+  background-color: gray;
+  font-size: 100px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
