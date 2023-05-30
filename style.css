@@ -7,20 +7,92 @@
   font-family: "Open Sans", Helvetica, sans-serif;
 }
 
-.gameboard {
+/* custom properties */
+:root {
+  --red: #eb5a54;
+  --accent-red: #f7928f;
+  --yellow: #f6d74f;
+  --accent-yellow: #ffea8c;
+  --dark-yellow: #cab039;
+}
+
+/* global */
+html {
+  font-size: 10px;
+  background-color: var(--yellow);
+}
+body {
+  max-width: 60rem;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+/* header */
+header,
+.announcement {
+  margin-top: 10%;
+  text-align: center;
+  color: var(--red);
+  margin-bottom: 5rem;
+}
+.title {
+  font-family: "Pacifico", cursive;
+  font-size: 4.8rem;
+  margin-bottom: 6rem;
+}
+.announcement {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1.6rem;
+  color: rgb(56, 57, 63);
+}
+
+/* main */
+.frontBoard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 400px;
-  height: 400px;
+  height: 60%;
   border: 2px solid blue;
   margin: 0px auto;
+  width: 100%;
+  border-radius: 6px;
+  grid-gap: 1rem;
 }
 
 .square {
-  border: 2px solid blue;
-  background-color: gray;
-  font-size: 100px;
-  text-align: center;
+  position: relative;
+  background-color: rgb(162, 206, 221);
+  border-radius: 4px;
+}
+.square:hover {
   cursor: pointer;
-  user-select: none;
+  background-color: rgb(142, 191, 208);
+}
+
+/* player markers */
+.oh {
+  background-color: var(--accent-red);
+  color: var(--red);
+}
+.ex {
+  background-color: var(--accent-yellow);
+  color: var(--dark-yellow);
+}
+.oh::after {
+  content: "O";
+  color: var(--red);
+}
+.ex::after {
+  content: "X";
+  color: var(--dark-yellow);
+}
+.oh::after,
+.ex::after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 8rem;
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
 }
